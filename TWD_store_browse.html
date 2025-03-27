@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Walking Dumpling</title>
+    <!--https://chatgpt.com/share/679942d1-9c14-8002-b13e-1a2aad7ffdd0-->
+    <!--bude chtítještě updatovat ↑↑↑↑-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Jersey+10+Charted&family=Langar&family=Pirata+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="pictures/TWD LOGO.png">
+    <style>
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    /*zacatek vlastniho css*/
+
+    body
+    {
+        background-color: rgb(17, 17, 17);
+        font-family: "Roboto", sans-serif;
+    }
+    .navBar
+    {
+        width: 100%;
+        height: 5em;
+        background-color: rgba(10, 10, 10, 0.8);
+        box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.02);
+        display: flex;
+        align-items: center;
+    }
+    .titles div:nth-child(1n)
+    {
+        display: inline-block;  /*z nějakýho důvodu tady musí být, aby zmizel underline*/
+        text-decoration: none;
+        color: white;
+    }
+    .logo
+    {
+        width: 3em;
+        height: 3em;
+        cursor: pointer;
+    }
+    .brandName
+    {
+        color: white;
+        font-weight: bold;
+        font-size: 3em;
+        cursor: pointer;
+    }
+    .homepageNav
+    {
+        display: inline-block;  /*z nějakýho důvodu tady musí být, aby zmizel underline*/
+        text-decoration: none;
+        color: white;
+        margin-left: 1.5em;
+        margin-right: 3.5em;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 0.5em;
+    }
+    .titles
+    {
+        color: white;
+        font-size: 1.2em;
+    }
+    .titles div:nth-child(1n)
+    {
+        padding: 1.6em;
+        padding-bottom: 1.5em;
+    }
+    .storeNav
+    {
+        border-bottom: 2px solid white;
+    }
+    .titles p:nth-child(1n):hover
+    {
+        color: rgb(139, 139, 139);
+        transition: color 0.2s ease;
+        cursor: pointer;
+    }
+    .fa-magnifying-glass
+    {
+        font-size: 1.8em;
+        color: white;
+        margin-left: 8em;
+        margin-right: 0.5em;
+        cursor: pointer;
+    }
+    .fa-magnifying-glass:hover
+    {
+        color: rgb(139, 139, 139);
+        transition: color 0.2s ease;
+    }
+    .search
+    {
+        font-size: 1.5em;
+        border-radius: 0.5em;
+    }
+    .search:hover
+    {
+        box-shadow: 0 0 0 1px white; /*nejspíš špatně z pohledu semantiky, ale border posouvá fa-globe*/
+    }
+    .fa-globe
+    {
+        font-size: 1.5em;
+        color: white;
+        margin-left: 2em;
+    }
+    .fa-globe:hover
+    {
+        color: rgb(139, 139, 139);
+        transition: color 0.2s ease;
+        cursor: pointer;
+    }
+
+    /*konec navBar části*/
+
+    .title
+    {
+        display: flex;
+        justify-content: center;
+        font-size: 3em;
+        color: rgb(213, 213, 213);
+        margin: 1em;
+        font-weight: bold;
+    }
+    .gamesSelection
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 8em;
+        align-items: center;
+        margin: 4em;
+        margin-top: 2em;
+    }
+    .game
+    {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    /*------------------------------------------*/
+    .game:hover
+    {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+    }
+    .game::after
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        z-index: 1;
+    }
+    .game:hover::after
+    {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+    }
+    .shadowAndText
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2em;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+    }
+    .shadowAndText
+    {
+        font-size: 2em;
+        width: 50em;
+    }
+    .game:hover .shadowAndText
+    {
+        opacity: 1; 
+    }
+    /*------------------------------------------*/
+    .gamesSelection img:nth-child(1n), .game
+    {
+        height: 30em;
+        box-shadow: 5px 5px 5px 0px rgb(100, 100, 100, 0.2);
+        border-radius: 0.5em;
+    }
+    .game
+    {
+        width: 53.3em;
+        background-color: rgb(58, 58, 58);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gamesSelection div:nth-child(1n) > p, .gamesSelection div:nth-child(1n) > h1
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+        font-size: 1.25em;
+        color: rgb(213, 213, 213);
+    }
+    .gamesSelection div:last-child > p
+    {
+        font-weight: bold;
+        font-size: 3em;
+        color: rgb(213, 213, 213);
+    }
+    footer
+        {
+            background-color: rgb(26, 26, 26);
+            padding: 4em;
+            display: flex;
+            justify-content: space-between;
+            gap: 20em;
+            align-items: center;
+            color: grey;
+        }
+        .copyright
+        {
+            color: grey;
+            width: 50em;
+            font-size: 1.3em;
+        }
+        .platformsGrid
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.5em;
+        }
+        .platforms > h3
+        {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 1em  ;
+        }
+        .platformsGrid img:nth-child(1n)
+        {
+            width: 3.9em;
+        }
+        .x_logo, .tiktok_logo
+        {
+            border-radius: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navBar">
+                <a href="TWD_homepage.html" class="homepageNav">
+                    <img src="pictures/TWD_logo.png" class="logo">
+                    <p class="brandName">TWD</p>
+                </a>
+                <section class="titles">
+                    <a href="TWD_store_browse.html"><div class="storeNav">Store</div></a>
+                    <a href="TWD_news_browse.html"><div class="newsNav">News</div></a>
+                    <a href="TWD_FAQ.html"><div class="FAQNav">FAQ</div></a>
+                    <a href="TWD_support.html"><div class="supportNav">Support</div></a>
+                    <a href="TWD_about.html"><div class="aboutNav">About</div></a>
+                </section>
+                <div class="searchWrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" class="search">
+                </div>
+                <i class="fa-solid fa-globe"></i>
+            </div>
+        </header>
+        <article class="main">
+            <h1 class="title">Games Store</h1>
+            <section class="gamesSelection">
+                <a href="TWD_store_games_info&purchase.html"><div class="game"><img src="pictures/MM.jpg"><div class="shadowAndText"><p>Museum Mania</p></div></div></a>
+                <a href="TWD_store_games_info&purchase.html"><div class="game"><img src="pictures/chalice.png"><div class="shadowAndText"><p>Chalice</p></div></div></a>
+                <a href="TWD_store_games_info&purchase.html"><div class="game"><img src="pictures/apocalypse_burg.png"><div class="shadowAndText"><p>Apocalypse Burg</p></div></div></a>
+                <div class="game"><p>Coming soon...</p></div>
+            </section>
+        </article>
+        <footer>
+            <p class="copyright">© 2025, The Walking Dumpling Games, Inc. All rights reserved. The Walking Dumpling, The Walking Dumpling Games, the The Walking Dumpling Games logo, Museum Mania, the  Museum Mania logo, Bürger Trasporter, Bürger Trasporter logo, Apocalypse Burg, Apocalypse Burg logo, Dark Middle Ages, Dark Middle Ages logo. Inc. in the Czech Republic. Other brands or product names are the trademarks of their respective owners.</p>
+            <section class="platforms">
+                <h3>PLATFORMS</h3>
+                <section class="platformsGrid">
+                    <a href="https://www.youtube.com/@thewalkingdumpling_" target="_blank"><img class="youtube_logo" src="pictures/youtube_logo.png"></a>
+                    <a href="https://www.instagram.com/the_walking_dumpling/" target="_blank"><img class="instagram_logo" src="pictures/instagram_logo.png"></a>
+                    <a href="TWD_sorry.html" target="_blank"><img class="x_logo" src="pictures/x_logo.webp"></a>
+                    <a href="TWD_sorry.html" target="_blank"><img class="facebook_logo" src="pictures/facebook_logo.png"></a>
+                    <a href="TWD_sorry.html" target="_blank"><img class="tiktok_logo" src="pictures/tiktok_logo.png"></a>
+                    <a href="https://discord.gg/p6wCPwdt" target="_blank"><img class="discord_logo" src="pictures/discord_logo.png"></a>
+                </section>
+            </section>
+        </footer>
+    </div>
+</body>
+</html>
