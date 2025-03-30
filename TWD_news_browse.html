@@ -7,164 +7,38 @@
     <!--https://chatgpt.com/share/679942d1-9c14-8002-b13e-1a2aad7ffdd0-->
     <!--bude chtítještě updatovat ↑↑↑↑-->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navBar.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/bg_image.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Jersey+10+Charted&family=Langar&family=Pirata+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="pictures/TWD LOGO.png">
     <style>
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed, 
-    figure, figcaption, footer, header, hgroup, 
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
-    article, aside, details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
-    body {
-        line-height: 1;
-    }
-    ol, ul {
-        list-style: none;
-    }
-    blockquote, q {
-        quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    /*zacatek vlastniho css*/
-
     body
     {
         background-color: rgb(17, 17, 17);
         font-family: "Roboto", sans-serif;
-    }
-    .navBar
-    {
-        width: 100%;
-        height: 5em;
-        background-color: rgba(10, 10, 10, 0.8);
-        box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.02);
-        display: flex;
-        align-items: center;
-    }
-    .titles div:nth-child(1n)
-    {
-        display: inline-block;  /*z nějakýho důvodu tady musí být, aby zmizel underline*/
-        text-decoration: none;
-        color: white;
-    }
-    .logo
-    {
-        width: 3em;
-        height: 3em;
-        cursor: pointer;
-    }
-    .brandName
-    {
-        color: white;
-        font-weight: bold;
-        font-size: 3em;
-        cursor: pointer;
-    }
-    .homepageNav
-    {
-        display: inline-block;  /*z nějakýho důvodu tady musí být, aby zmizel underline*/
-        text-decoration: none;
-        color: white;
-        margin-left: 1.5em;
-        margin-right: 3.5em;
-        display: flex;
-        justify-content: space-evenly;
-        gap: 0.5em;
-    }
-    .titles
-    {
-        color: white;
-        font-size: 1.2em;
-    }
-    .titles div:nth-child(1n)
-    {
-        padding: 1.6em;
-        padding-bottom: 1.5em;
+        background-image: url(pictures/bg2.png);
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
     .newsNav
     {
         border-bottom: 2px solid white;
     }
-    .titles p:nth-child(1n):hover
-    {
-        color: rgb(139, 139, 139);
-        transition: color 0.2s ease;
-        cursor: pointer;
-    }
-    .fa-magnifying-glass
-    {
-        font-size: 1.8em;
-        color: white;
-        margin-left: 8em;
-        margin-right: 0.5em;
-        cursor: pointer;
-    }
-    .fa-magnifying-glass:hover
-    {
-        color: rgb(139, 139, 139);
-        transition: color 0.2s ease;
-    }
-    .search
-    {
-        font-size: 1.5em;
-        border-radius: 0.5em;
-    }
-    .search:hover
-    {
-        box-shadow: 0 0 0 1px white; /*nejspíš špatně z pohledu semantiky, ale border posouvá fa-globe*/
-    }
-    .fa-globe
-    {
-        font-size: 1.5em;
-        color: white;
-        margin-left: 2em;
-    }
-    .fa-globe:hover
-    {
-        color: rgb(139, 139, 139);
-        transition: color 0.2s ease;
-        cursor: pointer;
-    }
-
-    /*konec navBar části*/
-    
     .title
     {
         display: flex;
         justify-content: center;
-        font-size: 3em;
+        font-size: clamp(1.3em, 3vw, 5em);
         color: rgb(213, 213, 213);
         margin-top: 1em;
         font-weight: bold;
@@ -179,46 +53,46 @@
         margin: 4em;
         margin-top: 2em;
     }
-    .newsSelection div:nth-child(1n)
+    .newsSelection div
     {
         display: flex;
         justify-content: space-evenly;
         background-color: rgb(58, 58, 58);
-        width: 80em;
+        width: 90vw;
         height: 15em;
         box-shadow: 5px 5px 5px 0px rgb(100, 100, 100, 0.2);
         border-radius: 0.25em;
     }
-    .newsSelection div:nth-child(1n):hover
+    .newsSelection div:hover
     {
         transform: scale(1.01);
         transition: transform 0.3s ease;
         cursor: pointer;
     }
-    .newsSelection img:nth-child(1n)
+    .newsSelection img
     {
-        height: 15em;
-        border-top-left-radius: 0.25em;
+        object-fit: cover;
+        width: 30vw;
         border-bottom-left-radius: 0.25em;
+        border-top-left-radius: 0.25em;
     }
-    .newsSelection div:nth-child(1n) > p, .newsSelection div:nth-child(1n) > h1
+    .newsSelection div > p, .newsSelection div > h1
     {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 2em;
-        font-size: 1.25em;
+        font-size: clamp(0.8em, 1.4vw, 3em);
         color: rgb(213, 213, 213);
     }
-    .newsSelection div:nth-child(1n) > h1
+    .newsSelection div > h1
     {
-        font-weight: bold;  
+        font-weight: bold;
+        font-size: clamp(1em, 2vw, 6em);
     }
     .moreComingSoon > p
     {
         display: block;
-        /*font-size: 2em;                                          nefunguje, nwm proč*/
         font-weight: bold;
         font-size: 2em;
         color: rgb(213, 213, 213);
@@ -237,49 +111,40 @@
             transform: translateX(0px);
         }
     }
-    .newsSelection a:nth-child(1n)
+    .newsSelection li
     {
         animation: appear linear;
         animation-timeline: view();
         animation-range: entry 0% cover 20%;
     }
-    footer
+    @media(min-width: 320px) and (max-width: 680px)
+    {
+        .newsSelection li
         {
-            background-color: rgb(26, 26, 26);
-            padding: 4em;
             display: flex;
-            justify-content: space-between;
-            gap: 20em;
+            flex-direction: column;
             align-items: center;
-            color: grey;
+            justify-content: space-evenly;
+            gap: 2em;
+            
         }
-        .copyright
+        .newsSelection li, .newsSelection img {
+            width: 100%;
+        }
+        .newsSelection div {
+            flex-direction: column;
+            height: auto;
+            width: 90%;
+        }
+        .newsNav
         {
-            color: grey;
-            width: 50em;
-            font-size: 1.3em;
+            border-bottom: 1px solid white;
         }
-        .platformsGrid
-        {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0.5em;
-        }
-        .platforms > h3
-        {
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 1em  ;
-        }
-        .platformsGrid img:nth-child(1n)
-        {
-            width: 3.9em;
-        }
-        .x_logo, .tiktok_logo
-        {
-            border-radius: 0.5em;
-        }
+    }
+    @media(min-width: 681px) and (max-width: 1100px)
+    {
+
+    }
     </style>
 </head>
 <body>
@@ -297,25 +162,21 @@
                     <a href="TWD_support.html"><div class="supportNav">Support</div></a>
                     <a href="TWD_about.html"><div class="aboutNav">About</div></a>
                 </section>
-                <div class="searchWrapper">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" class="search">
-                </div>
                 <i class="fa-solid fa-globe"></i>
             </div>
         </header>
         <article class="main">
             <h1 class="title">Latest News & Announcements</h1>
-            <section class="newsSelection">
-                <a href="TWD_news_article_KCD2.html"><div class=""><img src="pictures/TWD_news_kingdom_come_2_logo.jpg"><h1>Let's Celerbrate!</h1><p>The Walking Dumpling Studios discord is celebrating the release of the new czech game Kingdom Come: Deliverance II! The logo of the server has been changed in the name of the celebration. So join our discord and come chat about your excitement towards Kingdom Come: Deliverance II with us! <br><br> https://discord.gg/p6wCPwdt</p></div></a>
-                <a href="TWD_news_article_2025RM.html"><div class=""><img src="pictures/TWD_news_roadmap.png"><h1>2025 Release Roadmap</h1><p>Following the newly created roadmap The Walking Dumpling Studios has gone on a mission to release a handful of amazing content throughout the year. Things like sneak-peeks, behind the scenes, blogs, exclusives and so much more is waiting to be released in the new year. So come join our discord and watch it all fold out in front of your own eyes. <br><br> https://discord.gg/p6wCPwdt</p></div></a>
-                <a href=""><div class="moreComingSoon"><p>More coming soon...</p></div></a>
-                <a href=""><div class="moreComingSoon"><p>More coming soon...</p></div></a>
-                <a href=""><div class="moreComingSoon"><p>More coming soon...</p></div></a>
-            </section>
+            <ul class="newsSelection">
+                <li><a href="TWD_news_article_KCD2.html"><div class=""><img src="pictures/TWD_news_kingdom_come_2_logo.jpg"><h1>Let's Celerbrate!</h1><p>The Walking Dumpling Studios discord is celebrating the release of the new czech game Kingdom Come: Deliverance II! The logo of the server has been changed in the name of the celebration. So join our discord and come chat about your excitement towards Kingdom Come: Deliverance II with us! <br><br> https://discord.gg/p6wCPwdt</p></div></a></li>
+                <li><a href="TWD_news_article_2025RM.html"><div class=""><img src="pictures/TWD_news_roadmap_2.png"><h1>2025 Release Roadmap</h1><p>Following the newly created roadmap The Walking Dumpling Studios has gone on a mission to release a handful of amazing content throughout the year. Things like sneak-peeks, behind the scenes, blogs, exclusives and so much more is waiting to be released in the new year. So come join our discord and watch it all fold out in front of your own eyes. <br><br> https://discord.gg/p6wCPwdt</p></div></a></li>
+                <li><a href=""><div class="moreComingSoon"><p>More coming soon...</p></div></a></li>
+                <li><a href=""><div class="moreComingSoon"><p>More coming soon...</p></div></a></li>
+                <li><a href=""><div class="moreComingSoon"><p>More coming soon...</p></div></a></li>
+            </ul>
         </article>
         <footer>
-            <p class="copyright">© 2025, The Walking Dumpling Games, Inc. All rights reserved. The Walking Dumpling, The Walking Dumpling Games, the The Walking Dumpling Games logo, Museum Mania, the  Museum Mania logo, Bürger Trasporter, Bürger Trasporter logo, Apocalypse Burg, Apocalypse Burg logo, Dark Middle Ages, Dark Middle Ages logo. Inc. in the Czech Republic. Other brands or product names are the trademarks of their respective owners.</p>
+            <p class="copyright">&copy; 2025, The Walking Dumpling Games, Inc. All rights reserved. The Walking Dumpling, The Walking Dumpling Games, the The Walking Dumpling Games logo, Museum Mania, the  Museum Mania logo, Bürger Trasporter, Bürger Trasporter logo, Apocalypse Burg, Apocalypse Burg logo, Dark Middle Ages, Dark Middle Ages logo. Inc. in the Czech Republic. Other brands or product names are the trademarks of their respective owners.</p>
             <section class="platforms">
                 <h3>PLATFORMS</h3>
                 <section class="platformsGrid">

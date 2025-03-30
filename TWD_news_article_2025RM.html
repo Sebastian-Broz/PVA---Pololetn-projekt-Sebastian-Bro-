@@ -7,158 +7,31 @@
     <!--https://chatgpt.com/share/679942d1-9c14-8002-b13e-1a2aad7ffdd0-->
     <!--bude chtítještě updatovat ↑↑↑↑-->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navBar.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/bg_image.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Jersey+10+Charted&family=Langar&family=Pirata+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="pictures/TWD LOGO.png">
     <style>
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed, 
-    figure, figcaption, footer, header, hgroup, 
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
-    article, aside, details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
-    body {
-        line-height: 1;
-    }
-    ol, ul {
-        list-style: none;
-    }
-    blockquote, q {
-        quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    /*zacatek vlastniho css*/
-
-    body
-    {
-        background-color: rgb(17, 17, 17);
-        font-family: "Roboto", sans-serif;
-    }
-    .navBar
-    {
-        width: 100%;
-        height: 5em;
-        background-color: rgba(10, 10, 10, 0.8);
-        box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.02);
-        display: flex;
-        align-items: center;
-    }
-    .titles div:nth-child(1n)
-    {
-        display: inline-block;  /*z nějakýho důvodu tady musí být, aby zmizel underline*/
-        text-decoration: none;
-        color: white;
-    }
-    .logo
-    {
-        width: 3em;
-        height: 3em;
-        cursor: pointer;
-    }
-    .brandName
-    {
-        color: white;
-        font-weight: bold;
-        font-size: 3em;
-        cursor: pointer;
-    }
-    .homepageNav
-    {
-        display: inline-block;  /*z nějakýho důvodu tady musí být, aby zmizel underline*/
-        text-decoration: none;
-        color: white;
-        margin-left: 1.5em;
-        margin-right: 3.5em;
-        display: flex;
-        justify-content: space-evenly;
-        gap: 0.5em;
-    }
-    .titles
-    {
-        color: white;
-        font-size: 1.2em;
-    }
-    .titles div:nth-child(1n)
-    {
-        padding: 1.6em;
-        padding-bottom: 1.5em;
-    }
-    .newsNav
-    {
-        border-bottom: 2px solid white;
-    }
-    .titles p:nth-child(1n):hover
-    {
-        color: rgb(139, 139, 139);
-        transition: color 0.2s ease;
-        cursor: pointer;
-    }
-    .fa-magnifying-glass
-    {
-        font-size: 1.8em;
-        color: white;
-        margin-left: 8em;
-        margin-right: 0.5em;
-        cursor: pointer;
-    }
-    .fa-magnifying-glass:hover
-    {
-        color: rgb(139, 139, 139);
-        transition: color 0.2s ease;
-    }
-    .search
-    {
-        font-size: 1.5em;
-        border-radius: 0.5em;
-    }
-    .search:hover
-    {
-        box-shadow: 0 0 0 1px white; /*nejspíš špatně z pohledu semantiky, ale border posouvá fa-globe*/
-    }
-    .fa-globe
-    {
-        font-size: 1.5em;
-        color: white;
-        margin-left: 2em;
-    }
-    .fa-globe:hover
-    {
-        color: rgb(139, 139, 139);
-        transition: color 0.2s ease;
-        cursor: pointer;
-    }
-
-    /*konec navBar části*/ 
+        body
+        {
+            background-color: rgb(17, 17, 17);
+            font-family: "Roboto", sans-serif;
+        }
+        article
+        {
+            margin-top: 5em;
+        }
+        .newsNav
+        {
+            border-bottom: 2px solid white;
+        }
         .main
         {
             background-color: rgb(55, 55, 55);
@@ -168,7 +41,7 @@
         h1
         {
             display: flex;
-            font-size: 3em;
+            font-size: clamp(1.3em, 3vw, 5em);
             color: rgb(213, 213, 213);
             margin: 1em;
             font-weight: bold;
@@ -181,7 +54,7 @@
             margin: 2em;
             width: 80em;
             line-height: 1.2em;
-            font-size: 1.1em;
+            font-size: clamp(0.8em, 1.2vw, 1.2em);
         }
         .newsPic
         {
@@ -204,42 +77,51 @@
         {
             color: rgb(0, 110, 255);
         }
-        footer
+        @media(min-width: 320px) and (max-width: 680px)
         {
-            background-color: rgb(26, 26, 26);
-            padding: 4em;
-            display: flex;
-            justify-content: space-between;
-            gap: 20em;
-            align-items: center;
-            color: grey;
+            .newsWrapper
+            {
+                flex-direction: column;
+                align-items: center;
+            }
+            .news
+            {
+                width: 80vw;
+            }
+            h1
+            {
+                display: flex;
+                justify-content: center;
+            }
+            .newsPic
+            {
+                height: 28vh;
+            }
+            .newsNav
+            {
+                border-bottom: 1px solid white;
+            }
         }
-        .copyright
+        @media(min-width: 681px) and (max-width: 1100px)
         {
-            color: grey;
-            width: 50em;
-            font-size: 1.3em;
-        }
-        .platformsGrid
-        {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0.5em;
-        }
-        .platforms > h3
-        {
-            font-size: 2em;
-            font-weight: bold;
-            margin-bottom: 1em  ;
-        }
-        .platformsGrid img:nth-child(1n)
-        {
-            width: 3.9em;
-        }
-        .x_logo, .tiktok_logo
-        {
-            border-radius: 0.5em;
+            .newsWrapper
+            {
+                flex-direction: column;
+                align-items: center;
+            }
+            .news
+            {
+                width: 80vw;
+            }
+            h1
+            {
+                display: flex;
+                justify-content: center;
+            }
+            .newsPic
+            {
+                height: 65vh;
+            }
         }
     </style>
 </head>
@@ -258,10 +140,6 @@
                     <a href="TWD_support.html"><div class="supportNav">Support</div></a>
                     <a href="TWD_about.html"><div class="aboutNav">About</div></a>
                 </section>
-                <div class="searchWrapper">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" class="search">
-                </div>
                 <i class="fa-solid fa-globe"></i>
             </div>
         </header>
@@ -272,7 +150,7 @@
 As the year 2025 rolls on us, we bring you a BUNCH of new content we are looking to release in 2025. Many things are coming ahead such 
 as sneak peeks, lore and possibly even merchandise?! Wow! We are excited to tell you that the journey ahead is going to excite you to 
 your core! Just watch as we begin to release all our promises once at a time and be ready for what is to come! Here is the list of 
-things coming in 2025<br>
+things coming in 2025:<br>
 <span>
 - Sneak-peeks (starting in January, the whole 2025) 👀<br>
 - Behind the scenes (Q1 2025) 🎥<br>
@@ -287,7 +165,7 @@ things coming in 2025<br>
 - Merchandise - maybe (2nd half of 2025) 🎽<br>
 - Kickstarter - maybe (end of 2025) 💶<br>
 - First alpha testing (end of 2025 hopefully) 🎮<br>
-- And some more secrets 🤫<br>
+- And some more secrets 🤫<br><br>
 If you want to get all the information first and early, join our discord!<br><br>
 </span>
 
@@ -297,7 +175,7 @@ If you want to get all the information first and early, join our discord!<br><br
             </section>
         </article>
         <footer>
-            <p class="copyright">© 2025, The Walking Dumpling Games, Inc. All rights reserved. The Walking Dumpling, The Walking Dumpling Games, the The Walking Dumpling Games logo, Museum Mania, the  Museum Mania logo, Bürger Trasporter, Bürger Trasporter logo, Apocalypse Burg, Apocalypse Burg logo, Dark Middle Ages, Dark Middle Ages logo. Inc. in the Czech Republic. Other brands or product names are the trademarks of their respective owners.</p>
+            <p class="copyright">&copy; 2025, The Walking Dumpling Games, Inc. All rights reserved. The Walking Dumpling, The Walking Dumpling Games, the The Walking Dumpling Games logo, Museum Mania, the  Museum Mania logo, Bürger Trasporter, Bürger Trasporter logo, Apocalypse Burg, Apocalypse Burg logo, Dark Middle Ages, Dark Middle Ages logo. Inc. in the Czech Republic. Other brands or product names are the trademarks of their respective owners.</p>
             <section class="platforms">
                 <h3>PLATFORMS</h3>
                 <section class="platformsGrid">
